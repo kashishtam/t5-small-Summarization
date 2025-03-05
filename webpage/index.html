@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article Summarizer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Font Awesome for spinner icon (optional, or use a local image) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Article Summary</h1>
+        <div class="input-area">
+            <label for="articleInput">Article</label>
+            <textarea id="articleInput" rows="5" cols="50" placeholder="Paste your article here..."></textarea>
+            <div class="button-container">
+                <button onclick="summarizeArticle()" class="summarize-button">Summarize</button>
+                <button onclick="clearArticle()" class="clear-button">Clear</button>
+            </div>
+        </div>
+        <div class="output-area">
+            <label for="summaryOutput">Summary</label>
+            <div id="summaryOutput"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

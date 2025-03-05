@@ -1,0 +1,141 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(45deg, #4169E1, #000);
+    background: -webkit-linear-gradient(45deg, #4169E1, #000);
+    background: -moz-linear-gradient(45deg, #4169E1, #000);
+    background: -o-linear-gradient(45deg, #4169E1, #000);
+    min-height: 100vh; /* Ensure full viewport height for centering */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack children vertically */
+    position: relative;
+}
+
+.container {
+    max-width: 800px;
+    width: 100%; /* Ensure container fills available width */
+    text-align: center;
+    margin: auto; /* Center horizontally */
+    padding-top: 80px; /* Space for the title, adjust as needed */
+}
+
+h1 {
+    color: #ffffff;
+    font-size: 24px; 
+    margin: 0; 
+    padding: 10px 0; 
+    position: absolute; /* Position absolutely in top-left of body */
+    top: 20px; /* 20px from top of body */
+    left: 20px; /* 20px from left of body */
+    background: none;
+    border: none; 
+    z-index: 10; 
+}
+
+.input-area, .output-area {
+    margin: 20px 0;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+textarea, #summaryOutput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    resize: vertical;
+    background-color: white;
+}
+
+textarea:focus, #summaryOutput:focus {
+    outline: none;
+    border-color: #007BFF;
+}
+
+.button-container {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.summarize-button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.summarize-button:hover {
+    background-color: #0056b3;
+}
+
+.clear-button {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.clear-button:hover {
+    background-color: #c82333;
+}
+
+#summaryOutput {
+    min-height: 100px;
+    text-align: left;
+    white-space: pre-wrap;
+    user-select: text;
+    cursor: default;
+}
+
+.error {
+    color: red;
+}
+
+/* Spinner styles */
+.spinner {
+    display: inline-block;
+    font-size: 24px; /* Size of the icon */
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+    body {
+        padding: 10px; /* Reduce padding on mobile */
+        min-height: auto; /* Remove full height on mobile */
+        display: block; /* Stack content vertically */
+    }
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    textarea, #summaryOutput { width: 90%; }
+    .button-container { text-align: center; }
+    .summarize-button, .clear-button { margin: 5px 0; display: block; margin-left: auto; margin-right: auto; }
+    h1 {
+        position: static;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}
